@@ -80,13 +80,7 @@ namespace IE322_Project
 
         
 
-        private void btnHospital_Click(object sender, EventArgs e)
-        {
-            labelIndecator4.ForeColor = System.Drawing.Color.Green;
-            labelIndecator2.ForeColor = System.Drawing.Color.Black;
-            labelIndecator3.ForeColor = System.Drawing.Color.Black;
-            labelIndecator1.ForeColor = System.Drawing.Color.Black;
-        }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -141,7 +135,7 @@ namespace IE322_Project
                 cmd.Parameters.AddWithValue("@Age", age);
                 cmd.Parameters.AddWithValue("@Gender", gender);
                 cmd.Parameters.AddWithValue("@Blood", blood);
-                cmd.Parameters.AddWithValue("@Disease", any);
+                cmd.Parameters.AddWithValue("@Disease", disease);
                 cmd.Parameters.AddWithValue("@Pid", pid);
 
                 con.Open();
@@ -152,17 +146,8 @@ namespace IE322_Project
             }
             catch (Exception)
             {
-                MessageBox.Show("Invalid Data format or Invalid ID");
-            }
-
-
-
-
+                MessageBox.Show("Invalid input: " + ex.Message);
         }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
